@@ -45,11 +45,25 @@ isLoggedIn = (req, res, next) => {
     next();
 }
 
+isAdmin = (req, res, next) => {
+    if (req.session.role === 'waiter') {
+        return res.send('Access denied...');
+    }
+    next();
+}
+
+isWaiter = (req, res, next) => {
+    if (req.session.role === 'admin') {
+        return res.send('Access denied...');
+    }
+    next();
+}
+
 app.use('/', login);
 app.use('/login', login);
 app.use('/register', register);
-app.use('/user', isLoggedIn, user);
-app.use('/admin', isLoggedIn, admin);
+app.use('/user', isLoggedIn, isWaiter, user);
+app.use('/admin', isLoggedIn, isAdmin, admin);
 app.use('/logout', logout);
 
 const port = process.env.PORT || 7000;
