@@ -1,0 +1,21 @@
+{{#if messages.error}}
+<div class="alert alert-danger text-center">{{messages.error}}</div>
+{{/if}}
+<body>
+    <br>
+    <div class="container lead">
+        <div class="row">
+            <form action="" method="POST" class="form-group col-md-4">
+                <h2><strong>Login</strong></h2>
+                <hr>
+                <label for="username">username</label>
+                <input type="text" name="username" id="username" class="form-control" required="testing">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+                <br>
+                <input type="submit" name="login" id="" value="login" class="btn btn-outline-dark btn-lg">
+                <p class="float-right"><input type="checkbox" name="remember" id="" class=""> remember me</p>
+            </form>
+        </div>
+    </div>
+</body>

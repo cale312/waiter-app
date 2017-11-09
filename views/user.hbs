@@ -1,0 +1,49 @@
+<body>
+    <br>
+    <div class="container">
+        <h1>
+            Welcome <strong>{{username}}</strong>
+            <hr>
+        </h1>
+        <br>
+        <h2>
+             Select your days
+        </h2>
+        <br>
+        <form action="" method="POST">
+            <div class="">
+                <div class="nav days text-center">
+                    <p>
+                        <input type="checkbox" name="sun" id=""> Sunday</p>
+                    <p>
+                        <input type="checkbox" name="mon" id=""> Monday</p>
+                    <p>
+                        <input type="checkbox" name="tue" id=""> Tuesday</p>
+                    <p>
+                        <input type="checkbox" name="wed" id=""> Wednesday</p>
+                    <p>
+                        <input type="checkbox" name="thur" id=""> Thursday</p>
+                    <p>
+                        <input type="checkbox" name="fri" id=""> Friday</p>
+                    <p>
+                        <input type="checkbox" name="sat" id=""> Saturday</p>
+                </div>
+            </div>
+            <input type="submit" name="submit" id="" value="submit" class="btn btn-outline-dark btn-lg">
+        </form>
+    </div>
+</body>
+<style>
+    .login,
+    .register {
+        visibility: hidden;
+    }
+    .logout {
+        visibility: visible;
+    }
+    .days p {
+        padding: 20px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+</style>

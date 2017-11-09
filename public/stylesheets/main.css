@@ -1,0 +1,27 @@
+body {
+    background: url('/img/corvids5.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+}
+.container {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+.btn {
+    cursor: pointer;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bolder;
+}
+
+.logout {
+    visibility: hidden;
+}
+
+.navbar a:hover {
+    color: ghostwhite;
+    text-decoration: none;
+}

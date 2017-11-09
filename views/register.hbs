@@ -1,0 +1,24 @@
+{{#if messages.error}}
+<div class="alert alert-danger text-center">{{messages.error}}</div>
+{{/if}}
+
+{{#if messages.success}}
+<div class="alert alert-success text-center">{{messages.success}}</div>
+{{/if}}
+<body>
+    <br>
+    <div class="container lead">
+        <div class="row">
+            <form action="" method="POST" class="form-group col-md-4">
+                <h2><strong>Register</strong></h2>
+                <hr>
+                <label for="username">username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+                <br>
+                <input type="submit" name="register" id="" value="register" class="btn btn-outline-dark btn-lg">
+            </form>
+        </div>
+    </div>
+</body>
