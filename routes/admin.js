@@ -2,16 +2,12 @@ var express = require('express');
 const session = require('express-session');
 var router = express.Router();
 
-router.get('/:username', (req, res) => {
+router.get('/', (req, res) => {
     const username = req.params.username;
-    if (req.session.role === 'admin') {
-        res.render('admin', {
-            title: 'Admin',
-            username: username
-        });
-    } else {
-        res.send('Access denied...');
-    }
+    res.render('admin', {
+        title: 'Admin',
+        username: req.session.username
+    });
 });
 
 module.exports = router;
