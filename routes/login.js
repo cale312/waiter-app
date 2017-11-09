@@ -5,7 +5,15 @@ var router = express.Router();
 const waiterModel = require('../models/waiter.registration.model');
 
 router.get('/', (req, res) => {
-    (req.session.username) ? res.redirect('/user/' + req.session.username) : res.render('login', { title: 'Login' });
+    if (req.session.role === 'waiter') {
+        res.redirect('/user/' + req.session.username)
+    } else if (req.session.role === 'admin') {
+        res.redirect('/admin');
+    } else {
+        res.render('login', {
+            title: 'Login'
+        })
+    }
 });
 
 router.post('/', (req, res) => {
