@@ -13,13 +13,14 @@ router.post('/', (req, res) => {
     const password = req.body.password;
     req.session.username = req.body.username;
 
-    if (username !== 'admin') {
+    if (username === 'admin') {
+        req.session.role = 'admin';
+        res.redirect('/admin')
+    } else {
         req.session.role = 'waiter';
         res.redirect('/user/' + username);
-    } else {
-        req.session.role = 'admin';
-        res.redirect('/admin/' + username);
     }
+
 });
 
 module.exports = router;
